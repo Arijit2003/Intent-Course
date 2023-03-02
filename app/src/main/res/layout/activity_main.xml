@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <Button
+        android:id="@+id/btnExplicitIntent"
+        android:layout_width="170dp"
+        android:layout_height="58dp"
+        style="@style/btn_style"
+        android:layout_margin="15dp"
+        android:text="@string/explicitIntent" />
+
+    <Button
+        android:id="@+id/btnImplicitIntent"
+        android:layout_width="170dp"
+        android:layout_height="58dp"
+        style="@style/btn_style"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="25dp"
+        android:text="@string/implicitIntent"
+
+        />
+
+    <Button
+        android:id="@+id/btnMediaIntent"
+        android:layout_width="170dp"
+        android:layout_height="58dp"
+        style="@style/btn_style"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="15dp"
+        android:text="@string/mediaIntent" />
+
+    <Button
+        android:id="@+id/btnSystemIntent"
+        android:layout_width="170dp"
+        android:layout_height="58dp"
+        style="@style/btn_style"
+        android:layout_margin="15dp"
+        android:text="@string/systemIntent" />
+</LinearLayout>

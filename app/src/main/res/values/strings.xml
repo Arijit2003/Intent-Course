@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Intent Course</string>
+    <string name="explicitIntent">Explicit Intent</string>
+    <string name="implicitIntent">Implicit Intent</string>
+    <string name="mediaIntent">Media Intent</string>
+    <string name="systemIntent">System Intent</string>
+    <string name="startCameraInPhoto">Start Camera in Photo</string>
+    <string name="startCameraAndGetImage">StartCamera return photo</string>
+    <string name="openUrl">Open URL</string>
+    <string name="smsMessage">SMS Message</string>
+    <string name="setAnAlarm">Set Alarm</string>
+    <string name="webSearch">Web Search</string>
+    <string name="openPhoneDialog">Phone Dialog</string>
+    <string name="startAPhoneCall">Phone Call</string>
+    <string name="composeAnEmail">Email</string>
+    <string name="locationInMap">Location</string>
+    <string name="pendingIntent">Pending Intent</string>
+</resources>

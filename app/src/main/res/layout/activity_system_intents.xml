@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SystemIntents"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <Button
+        android:id="@+id/setAnAlarm"
+        android:layout_width="170dp"
+        android:layout_height="58dp"
+        style="@style/btn_style"
+        android:layout_margin="15dp"
+        android:text="@string/setAnAlarm" />
+
+    <Button
+        android:id="@+id/webSearch"
+        android:layout_width="170dp"
+        android:layout_height="58dp"
+        style="@style/btn_style"
+        android:layout_margin="15dp"
+        android:text="@string/webSearch"
+
+        />
+
+    <Button
+        android:id="@+id/openPhoneDialog"
+        android:layout_width="170dp"
+        android:layout_height="58dp"
+        style="@style/btn_style"
+        android:layout_margin="15dp"
+        android:text="@string/openPhoneDialog" />
+
+    <Button
+        android:id="@+id/startAPhoneCall"
+        android:layout_width="170dp"
+        android:layout_height="58dp"
+        style="@style/btn_style"
+        android:layout_margin="15dp"
+        android:text="@string/startAPhoneCall" />
+
+    <Button
+        android:id="@+id/composeAnEmail"
+        android:layout_width="170dp"
+        android:layout_height="58dp"
+        style="@style/btn_style"
+        android:layout_margin="15dp"
+        android:text="@string/composeAnEmail" />
+
+    <Button
+        android:id="@+id/locationInMap"
+        android:layout_width="170dp"
+        android:layout_height="58dp"
+        style="@style/btn_style"
+        android:layout_margin="15dp"
+        android:text="@string/locationInMap" />
+
+    <Button
+        android:id="@+id/pendingIntent"
+        android:layout_width="170dp"
+        android:layout_height="58dp"
+        style="@style/btn_style"
+        android:layout_margin="15dp"
+        android:text="@string/pendingIntent" />
+
+
+</LinearLayout>
