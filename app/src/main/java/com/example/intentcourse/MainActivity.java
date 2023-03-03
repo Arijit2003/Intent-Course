@@ -39,8 +39,9 @@ public class MainActivity extends AppCompatActivity {
                 i.setAction(Intent.ACTION_SEND);
                 i.setType("text/plain");
                 i.putExtra(Intent.EXTRA_TEXT,txt);
+                Intent chooser=Intent.createChooser(i,"Select any app");
                 if(i.resolveActivity(getPackageManager())!=null){
-                    startActivity(i);
+                    startActivity(chooser);
                 }
             }
         });

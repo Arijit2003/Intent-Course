@@ -5,10 +5,17 @@ import androidx.activity.result.ActivityResultCaller;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.SearchManager;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -24,6 +31,10 @@ public class SystemIntents extends AppCompatActivity {
     Button startAPhoneCall;
     Button composeAnEmail;
     Button locationInMap;
+
+    Button pendingIntent;
+
+    Activity context;
 
     ActivityResultLauncher<String> phoneResultLauncher = registerForActivityResult(new ActivityResultContracts.RequestPermission(),
             new ActivityResultCallback<Boolean>() {
@@ -63,6 +74,7 @@ public class SystemIntents extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_system_intents);
+        context=this;
 
         setAnAlarm=findViewById(R.id.setAnAlarm);
         setAnAlarm.setOnClickListener(new View.OnClickListener() {
@@ -151,6 +163,33 @@ public class SystemIntents extends AppCompatActivity {
                 intent.setAction(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse(turnByTurnNav));
                 startActivity(intent);
+
+            }
+        });
+        pendingIntent=findViewById(R.id.pendingIntent);
+        pendingIntent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(SystemIntents.this);
+                builder.setSmallIcon(R.drawable.img);
+                builder.setContentTitle("Sample Notification");
+                builder.setContentText("This is a sample notification");
+                builder.setAutoCancel(true);
+                builder.setSubText("Tap to view");
+                //create the intent that will be fired when the user taps the notification
+                Intent intent = new Intent(context,DestinationActivity.class);
+//                intent.putExtra("StringData","I came from pending intent");
+//                intent.putExtra("IntData",4321);
+                //Now wrap this intent with the pending intent
+
+                PendingIntent pendingIntent=PendingIntent.getActivity(getApplicationContext(), 104, intent, PendingIntent.FLAG_CANCEL_CURRENT|PendingIntent.FLAG_IMMUTABLE);
+                //Now attach the pending intent to the builder
+                builder.setContentIntent(pendingIntent);
+
+                NotificationManager mgr=(NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+                mgr.notify(0,builder.build());
+
+
 
             }
         });

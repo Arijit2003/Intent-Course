@@ -14,7 +14,12 @@ public class DestinationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_destination);
         textView=findViewById(R.id.textView);
-        String dataStr= getIntent().getStringExtra("StringData");
+        String dataStr;
+        if(getIntent().getStringExtra("StringData")!=null) {
+            dataStr = getIntent().getStringExtra("StringData");
+        }else{
+            dataStr="";
+        }
         int dataInt=getIntent().getIntExtra("IntData",-1);
         textView.setText(dataStr.concat(Integer.toString(dataInt)));
 
